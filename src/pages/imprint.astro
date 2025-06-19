@@ -79,7 +79,7 @@ import Component from "../components/Component.astro";
     function callback() {
       const homeButton = document.querySelector('[back-to-home]')
       homeButton?.addEventListener('click', (e) => {
-        if (fromFeed && history.length > 1) {
+        if (history.length > 1) {
           e.preventDefault()
           history.back()
         }
