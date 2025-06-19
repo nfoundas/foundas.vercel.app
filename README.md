@@ -1,10 +1,10 @@
 <h2 align="center">
   <p>Personal website built with Astro</p>
-  <a href="https://vrus.vercel.app/" target="_blank">https://vrus.vercel.app/</a>
+  <a href="https://nico.foundas.de/" target="_blank">https://nico.foundas.de/</a>
 </h2>
 
 <div align="center">
-  <img alt="Demo" src="./demo/demo.webp" />
+  This version was slithly adjusted from the original fork of vadim
   <img alt="Demo" src="./demo/pagespeed-score.png" />
 </div>
 

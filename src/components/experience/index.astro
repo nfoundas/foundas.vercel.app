@@ -58,7 +58,7 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
         {description}
       </p>
       {
-        technologies.length && (
+        technologies.length ? (
           <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
             {technologies.map((technology) => (
               <li class="mr-1.5 mt-2">
@@ -68,7 +68,7 @@ const { dates, title, company, companyUrl, description, technologies, logo } =
               </li>
             ))}
           </ul>
-        )
+        ) : null
       }
     </div>
   </div>

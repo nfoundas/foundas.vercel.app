@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+import IconArrow from "../components/icons/arrow.astro";
+import Component from "../components/Component.astro";
+---
+<Layout title="Nico Foundas / Imprint">
+    <div class="relative hero z-10">
+
+        <div class="flex flex-col justify-centermx-auto min-h-screen max-w-screen-2xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+          <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen  lg:flex-col lg:justify-between lg:py-24">
+            <div class="flex  gap-4 flex-col items-center text-center lg:text-left">
+
+              <a
+                      class="block self-start hover:text-slate-200"
+                      href="/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="home"
+                      back-to-home
+              >
+                  <span class="sr-only">Home</span>
+                {<Component component={IconArrow} />}
+              </a>
+              <h1 class="text-4xl font-bold tracking-tight bg-clip-text bg-gradient-to-b from-neutral-50 to-neutral-400">Imprint</h1>
+
+              <h2 class="mt-2 text-sm lg:text-lg font-medium text-neutral-400">
+                  Information in accordance with Section 5 TMG
+              </h2>
+              <p>
+                  Nico Foundas Software Engineering<br>
+                  Main-Neckar-Bahn-Str. 23<br>
+                  68229 Mannheim<br>
+                  Germany<br>
+                  <br>
+                  +49 1575 4282874<br>
+                  nico@foundas.de
+              </p>
+            </div>
+          </header>
+        </div>
+    </div>
+</Layout>
+
+
+<style scoped>
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .hero {
+        background-image: url(/pattern.svg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        overflow-y: visible;
+        overflow-x: clip;
+    }
+
+    /*
+    .hero {
+      animation: fadeIn 3s;
+    }
+     */
+</style>
+
+<script>
+    import { supportsViewTransitions } from 'astro:transitions/client'
+
+    if (supportsViewTransitions) {
+      document.addEventListener('astro:page-load', callback)
+    } else {
+      callback()
+    }
+
+    function callback() {
+      const homeButton = document.querySelector('[back-to-home]')
+      homeButton?.addEventListener('click', (e) => {
+        if (fromFeed && history.length > 1) {
+          e.preventDefault()
+          history.back()
+        }
+      })
+    }
+  </script>
